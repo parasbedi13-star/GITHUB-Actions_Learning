@@ -1,12 +1,12 @@
 provider "azurerm" {
-    features {}
-  }
-  variable "rgs" {}
+  features {}
+}
+variable "rgs" {}
 
-  resource "azurerm_resource_group" "name" {
+resource "azurerm_resource_group" "name" {
 
-    for_each = var.rgs
-    name = each.value.name
-    location = each.value.location
-    
-  }
+  for_each = var.rgs
+  name     = each.value.name
+  location = each.value.location
+
+}
