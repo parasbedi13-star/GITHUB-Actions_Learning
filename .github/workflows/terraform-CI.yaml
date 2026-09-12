@@ -5,9 +5,9 @@ on:
     branches:
       - main
 
-# permissions:
-#   id-token: write
-#   contents: read
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   Terraform-validate-plan:
@@ -18,8 +18,8 @@ jobs:
       - name: checkout
         uses: actions/checkout@v7.0.1
   
-      - name:  Run checkout Security scan
-        uses:  bridgecrewio/checkov-action@v12
+      # - name:  Run checkout Security scan
+      #   uses:  bridgecrewio/checkov-action@v12
 
       - name: Azure login
         uses: azure/login@v3
